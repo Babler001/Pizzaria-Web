@@ -1,73 +1,74 @@
-# React + TypeScript + Vite
+# 🍕 Sistema de Pizzaria Profissional
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é um sistema web completo e moderno para gerenciamento de pizzarias, desenvolvido com **React** e **TypeScript**, utilizando o **Firebase (Firestore)** como banco de dados em tempo real.
 
-Currently, two official plugins are available:
+O projeto apresenta uma interface "Gourmet" (Dark Mode), responsiva e intuitiva, com foco na experiência do usuário e na agilidade do atendimento.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 👥 Autores / Desenvolvedores
 
-## React Compiler
+Trabalho desenvolvido pelos alunos:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Eduardo Escuer** - RA: 2500241
+* **Gabriel Cannuto** - RA: 2505604
+* **Gustavo Facione** - RA: 2506276
+* **Matheus Babler** - RA: 2506053
+* **Pedro Henrique Tonhon** - RA: 2507542
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Funcionalidades do Sistema
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 🖥️ Painel de Controle (Dashboard)
+* Visão geral com contadores de Pizzas cadastradas, Clientes e Vendas totais.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 👤 Gestão de Clientes
+* **CRUD Completo:** Cadastrar, Listar, Editar e Excluir clientes.
+* Interface em Cards para fácil visualização.
+* Botão de edição rápida que preenche o formulário automaticamente.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 📋 Gestão de Cardápio Dinâmico
+O sistema permite gerenciar todos os aspectos do produto separadamente através de abas:
+* **Pizzas:** Sabores e preços base.
+* **Tamanhos:** (Ex: Broto, Média, Gigante) com precificação adicional.
+* **Adicionais:** (Ex: Borda Recheada, Bacon Extra) com custos extras.
+* **Bebidas e Sobremesas:** Cadastro de itens complementares.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 🛒 Sistema de Pedidos Inteligente (Wizard)
+Fluxo de pedido otimizado para evitar erros:
+1.  **Seleção do Cliente:** Busca rápida na base de dados.
+2.  **Personalização da Pizza:**
+    * Ao clicar no sabor, abre-se uma janela de configuração.
+    * **Passo 1:** Escolha obrigatória do Tamanho.
+    * **Passo 2:** Seleção de Adicionais (opcional).
+    * **Passo 3:** Definição da Quantidade.
+3.  **Carrinho de Compras:** Visualização detalhada dos itens e total.
+4.  **Pagamento:** Seleção entre Dinheiro, Pix ou Cartão.
+5.  **Botão de Pânico:** Opção para cancelar/limpar o pedido atual rapidamente.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 📄 Comprovantes e Relatórios
+* **Geração Automática de Cupom:** Ao finalizar o pedido, o sistema gera e baixa automaticamente um arquivo `.txt` com o comprovante do cliente.
+* **Histórico de Vendas:** Tabela detalhada com Data, Cliente, Forma de Pagamento e Valor Total.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+* **Frontend:** React.js, Vite
+* **Linguagem:** TypeScript
+* **Estilização:** CSS3 (Variáveis CSS, Flexbox, Grid Layout, Animações Keyframes)
+* **Banco de Dados:** Google Firebase (Firestore)
+* **Ferramentas:** Node.js, NPM, Git
+
+---
+
+## 💻 Como baixar e rodar este projeto
+
+Siga as instruções abaixo para rodar o sistema na sua máquina local.
+
+### Pré-requisitos
+Certifique-se de ter o **Node.js** instalado.
+
+### 1. Clonar o Repositório
+```bash
+git clone [https://github.com/SEU-USUARIO/NOME-DO-REPOSITORIO.git](https://github.com/SEU-USUARIO/NOME-DO-REPOSITORIO.git)
+cd NOME-DA-PASTA
